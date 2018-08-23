@@ -1,2 +1,2 @@
-# NewRepo
-Trying to create
+# repo for homework
+Every lesson is a new branch
