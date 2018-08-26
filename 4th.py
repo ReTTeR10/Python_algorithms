@@ -10,3 +10,13 @@ __author__ = 'Мишин Егор Олегович'
 то вводятся эти символы. 
 Программа должна вывести на экран любой символ алфавита от 'a' до 'f' включительно.
 '''
+
+import random
+
+ans1 = input('Введите диапазон целых чисел(x y): ').split(' ')
+ans2 = input('Введите диапазон вещественных чисел(x y): ').split(' ')
+ans3 = input('Введите диапазон символов(x y): ').split(' ')
+
+print(f'1ый случай -> {random.randint(int(ans1[0]),int(ans1[1]))}')
+print(f'2ой случай -> {random.uniform(float(ans2[0]),float(ans2[1]))}')
+print(f'3ий случай -> {chr(random.randint(ord(ans3[0]),ord(ans3[1])))}')
