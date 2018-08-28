@@ -7,3 +7,13 @@ __author__ = 'Мишин Егор Олегович'
 '''
  левое делить на -2
 '''
+
+
+def sum_el(n, num=1):
+    if n == 1:
+        return num
+
+    elif n > 1:
+        return f'{num} {sum_el(n - 1, num / (-2))}'
+
+print(sum_el(200))
