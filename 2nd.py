@@ -6,14 +6,14 @@ __author__ = 'Мишин Егор Олегович'
 '''
 
 
-chet = []
-nechet = []
+chet = ''
+nechet = ''
 
 num = input('Введите число для анализа: ')
 for i in num:
     if int(i) % 2 == 0:
-        chet.append(i)
+        chet += i
     else:
-        nechet.append(i)
+        nechet += i
 
 print(f'В вашем числе {len(chet)} четных {chet} и {len(nechet)} нечетных {nechet}')
