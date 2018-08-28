@@ -14,6 +14,9 @@ def sum_el(n, num=1):
         return num
 
     elif n > 1:
-        return f'{num} {sum_el(n - 1, num / (-2))}'
+        return num + sum_el(n - 1, num / (-2))
 
-print(sum_el(200))
+
+lenth = int(input('Введите число элементов(до ~900 элементов считает, дальше сумма стремится к 0.6(6)): '))
+
+print(f'сумма = {sum_el(lenth)}')
