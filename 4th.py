@@ -13,10 +13,13 @@ def sum_el(n, num=1):
     if n == 1:
         return num
 
+    if n > 900:
+        return 0.666666666666
+
     elif n > 1:
         return num + sum_el(n - 1, num / (-2))
 
 
-lenth = int(input('Введите число элементов(до ~900 элементов считает, дальше сумма стремится к 0.6(6)): '))
+lenth = int(input('Введите число элементов: '))
 
 print(f'сумма = {sum_el(lenth)}')
