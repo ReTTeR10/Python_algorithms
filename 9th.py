@@ -10,10 +10,10 @@ __author__ = 'Мишин Егор Олегович'
 
 count = int(input('\nСколько чисел будем вводить? '))
 maximum = 0
-summa = 0
 max_num = 0
 while count != 0:
     num = input('\nВведите число: ')
+    summa = 0
     for i in num:
         summa += int(i)
     if summa > maximum:
