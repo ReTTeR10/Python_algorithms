@@ -18,12 +18,23 @@ def user_input():
     return input('\nЖелаемое действие? (+,-,*,/, 0 - выход) ')
 
 
+def check_input(ans):
+    if ans != '+' and ans != '-' and ans != '*' and ans != '/' and ans != '0':
+        print('Неверное действие')
+        return False
+    else:
+        pass
+
+
 ans = user_input()
 if ans != '+' and ans != '-' and ans != '*' and ans != '/' and ans != '0':
     print('Неверное действие')
     ans = user_input()
+while check_input(ans) is False:
+    ans = user_input()
 while ans != '0':
-
+    while check_input(ans) is False:
+        ans = user_input()
     num1 = float(input('\nВведите первое число'))
     num2 = float(input('\nВведите второе число'))
     if ans == '+':
