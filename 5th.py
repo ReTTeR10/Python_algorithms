@@ -6,7 +6,6 @@ __author__ = 'Мишин Егор Олегович'
 '''
 
 for i in range(32, 128):
-    print(i, '-', chr(i), end=' ')
     if (i - 2) % 10 == 0:
         print()
-
+    print(i, '-', chr(i), end=' ')
