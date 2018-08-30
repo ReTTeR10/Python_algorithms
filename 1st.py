@@ -19,7 +19,9 @@ def user_input():
 
 
 ans = user_input()
-
+if ans != '+' or ans != '-' or ans != '*' or ans != '/' or ans != '0':
+    print('Неверное действие')
+    ans = user_input()
 while ans != '0':
 
     num1 = float(input('\nВведите первое число'))
