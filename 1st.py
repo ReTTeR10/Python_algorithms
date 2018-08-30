@@ -19,7 +19,7 @@ def user_input():
 
 
 ans = user_input()
-if ans != '+' or ans != '-' or ans != '*' or ans != '/' or ans != '0':
+if ans != '+' and ans != '-' and ans != '*' and ans != '/' and ans != '0':
     print('Неверное действие')
     ans = user_input()
 while ans != '0':
