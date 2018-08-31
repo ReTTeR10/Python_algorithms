@@ -7,7 +7,7 @@ from random import randint
 
 list_1 = [randint(-9, 9) for _ in range(1, 20)]
 
-max_el = -10
+max_el = list_1[0]
 max_num = []
 count = 0
 
