@@ -19,6 +19,9 @@ for i, value in enumerate(list_1):      # пытался реализовать 
     if value == max_el:                 # но не получилось
         count += 1
         max_num.append(i)
+if not max_num:
+    print('Не попалось отрицательных элементов =(')
+    exit()
 
 
 print(f'Наш список: {list_1}')
