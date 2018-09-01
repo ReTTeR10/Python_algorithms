@@ -10,6 +10,7 @@ maximum = list_1[0]
 minimum = list_1[0]
 max_index = 0
 min_index = 0
+
 print(f'Исходный список: {list_1}')
 for i, item in enumerate(list_1):
     if item > maximum:
@@ -20,5 +21,5 @@ for i, item in enumerate(list_1):
         min_index = i
 
 print(f'\nmax = {maximum} max_index = {max_index}\n min = {minimum} min_index = {min_index}')
-list_1[max_index],list_1[min_index] = list_1[min_index],list_1[max_index]
+list_1[max_index], list_1[min_index] = list_1[min_index], list_1[max_index]
 print(f'\nИзмененный список: {list_1}')
