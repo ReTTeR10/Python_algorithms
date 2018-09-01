@@ -21,4 +21,5 @@ for i in list_1:
     if count > max_count:
         max_count = count
         max_cnum = num
+
 print(f'max_num = {max_cnum}, count = {max_count}')
