@@ -5,6 +5,12 @@ __author__ = 'Мишин Егор Олегович'
 
 from random import randint
 
+'''
+Почему-то программа иногда залипает и не делает то что должна, понять почему так не вышло((
+Если вдруг выдает неверный результат, то стоит запустить еще раз. Есть подохрение из-за max_el = list_1[0]. Но 
+не уверен
+'''
+
 list_1 = [randint(-9, 9) for _ in range(1, 20)]
 
 max_el = list_1[0]
@@ -15,10 +21,12 @@ for value in list_1:
 
     if value < 0 and value > max_el:
         max_el = value
+
 for i, value in enumerate(list_1):      # пытался реализовать подсчет максимальных элементов в одином цикле с программой
     if value == max_el:                 # но не получилось
         count += 1
         max_num.append(i)
+
 if not max_num:
     print('Не попалось отрицательных элементов =(')
     exit()
