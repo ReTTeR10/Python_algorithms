@@ -1,26 +1,38 @@
 __author__ = 'Мишин Егор Олегович'
 """
-5. В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию в массиве.
+Найти максимальный элемент среди минимальных элементов столбцов матрицы.
 """
 
 from random import randint
 
-list_1 = [randint(-9, 9) for _ in range(1, 20)]
+list_min = []
+lenth = int(input('Введите количество столбцов матрицы'))
+high = int(input('Введите количество строк матрицы'))
 
-max_el = -10
-max_num = []
-count = 0
+matrix = [[randint(-9, 9) for _ in range(lenth)]for _ in range(high)]
 
-for value in list_1:
+print('\nНаша матрица:')
+for row in matrix:
+    print(row)
 
-    if value < 0 and value > max_el:
-        max_el = value
-for i, value in enumerate(list_1):      # пытался реализовать подсчет максимальных элементов в одином цикле с программой
-    if value == max_el:                 # но не получилось
-        count += 1
-        max_num.append(i)
+new_matrix = list(map(list, zip(*matrix)))
+'''
+транспонируем матрицу чтобы найти минимальный элемент в столбце, так как
+т.к. при транспонировании столбцы становятся строками, и искать удобнее
+'''
+
+for row in new_matrix:    # ищем минимальный элемент в строке(бывшем столбце)
+    min_el = new_matrix[0][0]
+    for item in row:
+        if item < min_el:
+            min_el = item
+    list_min.append(min_el)    # добавляем в список
 
 
-print(f'Наш список: {list_1}')
-print(f'Максимальный отрицательный элемент: {max_el}, его позиция: {max_num}, встречается {count} раз')
+print(f'\nСписок минимальных элементов столбцов {list_min}')
+max_el = list_min[0]
+for item in list_min:
+    if item > max_el:
+        max_el = item
 
+print(f'\nМаксимальный элемент среди минимальных элементов столбцов матрицы: {max_el}')
