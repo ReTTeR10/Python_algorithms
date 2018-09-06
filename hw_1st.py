@@ -93,4 +93,6 @@ def sum_el_3(n):
 # ncalls  tottime  percall  cumtime  percall   filename:lineno(function)
 #   1    0.000    0.000    0.000    0.000       hw_2nd.py:63(sum_el_3)    <- 10
 #   1    0.000    0.000    0.000    0.000       hw_2nd.py:63(sum_el_3)    <- 400
-
+'''
+Если я правильно понял, то сложность алгоритма в этих примерах O(n)
+'''
