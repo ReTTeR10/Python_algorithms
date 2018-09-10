@@ -40,3 +40,26 @@ for line in all_company:
         higher.append(line.name)
 
 print(f'Кто меньше - {lower}, больше - {higher}')
+
+
+''' Тут первый вариант решения, но я так и не понял как на лету передавать в этот namedtuple значения'''
+
+'''
+n = int(input('Сколько компаний для анализа? '))
+i = 0
+company = []
+profit = {}
+average = []
+while i != n:
+    quartal = ['name', 'first', 'second', 'third', 'fourth', 'profit']
+    profit = 0
+    Company_name = namedtuple('Company_name', quartal)
+    company.append(Company_name(input('name'), input('first'), input('second'), input('third'), input('fourth'), 0))
+
+    company[i]._asdict()
+    company[i]._replace(profit=company[i].first + company[i].second + company[i].third + company[i].fourth)
+    i += 1
+    average = 0
+for line in company:
+    print(line)
+'''
