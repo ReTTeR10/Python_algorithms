@@ -7,7 +7,7 @@ __author__ = 'Мишин Егор Олегович'
 Сумма чисел из примера: [‘C’, ‘F’, ‘1’]. 
 Произведение - [‘7’, ‘C’, ‘9’, ‘F’, ‘E’].
 '''
-
+from collections import deque
 
 
 sixteen = {str(a): a for a in range(16)}
@@ -29,28 +29,35 @@ def sixteen_ten(num16):
                 length -= 1
     return num10
 
+
 def ten_sixteen(num10):
     length = len(str(num10)) - 1
-    num16 = []
+    num16 = deque()
     while length != 0:
-        num16.append(num10 % 16)
+        num16.appendleft(num10 % 16)
         num10 = num10 // 16
         length -= 1
     for i, item in enumerate(num16):
         for key, value in sixteen2.items():
             if item == key:
                 num16[i] = value
-    num16.reverse()
+   # num16.reverse()
     return num16
+
+
+# def summa(num1, num2):
+#     num1 = sixteen_ten(num1)
+#     num2 = sixteen_ten(num2)
+
 
 
 num16_1 = [_ for _ in input('Введите число:')]
 num16_2 = [_ for _ in input('Введите число:')]
 
-summa = ten_sixteen(sixteen_ten(num16_1) + sixteen_ten(num16_2))
+summa1 = ten_sixteen(sixteen_ten(num16_1) + sixteen_ten(num16_2))
 mult = ten_sixteen(sixteen_ten(num16_1) * sixteen_ten(num16_2))
 
 
-print(f'sum = {summa}, mult = {mult}')
+print(f'sum = {summa1}, mult = {mult}')
 
 
