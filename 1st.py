@@ -7,22 +7,22 @@ __author__ = 'Мишин Егор Олегович'
 '''
 from collections import namedtuple
 
-Company = namedtuple('Сompany', 'name quarter1 quarter2 quarter3 quarter4 average')
+Company = namedtuple('Сompany', 'name quarter1 quarter2 quarter3 quarter4 average')  # создаем namedtuple
 n = int(input('Сколько компаний для анализа? '))
 
 all_company = []
 lower = []
 higher = []
 
-for i in range(n):
+for i in range(n):                      # заполняем
     name = input('Введите название фирмы: ')
     quarter1 = int(input('Прибыль за 1ый квартал: '))
     quarter2 = int(input('Прибыль за 2ый квартал: '))
     quarter3 = int(input('Прибыль за 3ий квартал: '))
     quarter4 = int(input('Прибыль за 4ый квартал: '))
     average = (quarter1 + quarter2 + quarter3 + quarter4) / 4
-    our_company = Company(name, quarter1, quarter2, quarter3, quarter4, average)
-    all_company.append(our_company)
+    our_company = Company(name, quarter1, quarter2, quarter3, quarter4, average)  # передаем введеные значения в перемен
+    all_company.append(our_company)         # добавляем в список
 
 summ_profit = 0
 
@@ -34,7 +34,7 @@ total_average = summ_profit / (4 * n)
 print(f'Общее средняя выручка: {total_average}')
 
 for line in all_company:
-    if line.average < total_average:
+    if line.average < total_average:    # определяем какие компании меньше заработали, а какие больше
         lower.append(line.name)
     else:
         higher.append(line.name)
