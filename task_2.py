@@ -8,17 +8,41 @@ import random
 
 
 def sort_merge(array):
-    if len(array) > 0:
-        n = int(len(array) / 2)
-        list_1 = array[:n]
-        list_2 = array[n:]
-        print(f'1й список {list_1}, 2ой список {list_2}')
-    else:
-        return print("Нечего сортировать")
+    if len(array) > 1:
+        mid = len(array) // 2  # делим пополам
+        left = array[:mid]     # левая половина
+        right = array[mid:]    # правая половина
+
+        sort_merge(left)       # разбиваем половины еще на половины
+        sort_merge(right)
+
+        i = 0
+        j = 0
+        k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                array[k] = left[i]
+                i += 1
+            else:
+                array[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            array[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            array[k] = right[j]
+            j += 1
+            k += 1
+    elif len(array) < 1:
+        return print("Число элементов массива должно быть больше 1 элемента")
+    return array
 
 
-# random.randint(0, 50)
 my_list = [random.randint(0, 49) / random.randint(1, 10) for _ in range(1, 20)]  # создаем список вещественных чисел
-print(my_list)
-
-sort_merge(my_list)
+# my_list = []
+print(f'Исходный массив: \n {my_list}')
+print(f'Отсортированный массив: \n {sort_merge(my_list)}')
